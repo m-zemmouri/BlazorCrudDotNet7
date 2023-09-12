@@ -13,7 +13,9 @@ namespace BlazorCrudDotNet7.Server.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=.\\SQLExpress;Database=BlazorCrudDB;Trusted_Connection=true;TrustServerCertificate=true;");
+            string cs = "Server=.;Database=BlazorCrudDB;Trusted_Connection=true;TrustServerCertificate=true;";
+            cs = "Data Source=.;Integrated Security=true;Initial Catalog=BlazorCrudDB;TrustServerCertificate=True;MultipleActiveResultSets=true;";
+            optionsBuilder.UseSqlServer(cs);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
